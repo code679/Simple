@@ -1,0 +1,24 @@
+In file included from Simple.lex:10:0:
+Simple.tab.h:69:15: error: stray ‘#’ in program
+ typedef union #line 72 "Simple.y" /* yacc.c:1909  */
+               ^
+Simple.tab.h:69:21: error: expected identifier or ‘(’ before numeric constant
+ typedef union #line 72 "Simple.y" /* yacc.c:1909  */
+                     ^
+Simple.tab.h:72:7: error: stray ‘#’ in program
+ union #line 72 "Simple.y" /* yacc.c:1909  */
+       ^
+Simple.tab.h:72:13: error: expected identifier or ‘(’ before numeric constant
+ union #line 72 "Simple.y" /* yacc.c:1909  */
+             ^
+In file included from Simple.lex:10:0:
+Simple.tab.h:89:1: error: unknown type name ‘YYSTYPE’
+ extern YYSTYPE yylval;
+ ^
+Simple.lex: In function ‘yylex’:
+Simple.lex:22:9: error: request for member ‘intval’ in something not a structure or union
+ {DIGIT}+ { yylval.intval = atoi( yytext );
+         ^
+Simple.lex:37:9: error: request for member ‘id’ in something not a structure or union
+ {ID} { yylval.id = (char *) strdup(yytext);
+         ^

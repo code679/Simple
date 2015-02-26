@@ -1,0 +1,114 @@
+Simple.tab.c: At top level:
+Simple.tab.c:190:15: error: stray ‘#’ in program
+ typedef union #line 72 "Simple.y" /* yacc.c:355  */
+               ^
+Simple.tab.c:190:21: error: expected identifier or ‘(’ before numeric constant
+ typedef union #line 72 "Simple.y" /* yacc.c:355  */
+                     ^
+Simple.tab.c:193:7: error: stray ‘#’ in program
+ union #line 72 "Simple.y" /* yacc.c:355  */
+       ^
+Simple.tab.c:193:13: error: expected identifier or ‘(’ before numeric constant
+ union #line 72 "Simple.y" /* yacc.c:355  */
+             ^
+Simple.tab.c:210:1: error: unknown type name ‘YYSTYPE’
+ extern YYSTYPE yylval;
+ ^
+Simple.tab.c:405:3: error: unknown type name ‘YYSTYPE’
+   YYSTYPE yyvs_alloc;
+   ^
+Simple.tab.c:734:52: error: unknown type name ‘YYSTYPE’
+ yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+                                                    ^
+Simple.tab.c:753:46: error: unknown type name ‘YYSTYPE’
+ yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+                                              ^
+Simple.tab.c:791:39: error: unknown type name ‘YYSTYPE’
+ yy_reduce_print (yytype_int16 *yyssp, YYSTYPE *yyvsp, int yyrule)
+                                       ^
+Simple.tab.c:1071:44: error: unknown type name ‘YYSTYPE’
+ yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep)
+                                            ^
+Simple.tab.c:1078:16: error: expected end of line before ‘push’
+   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
+                ^
+Simple.tab.c:1078:16: error: expected end of line before ‘ignored’
+Simple.tab.c:1078:16: error: expected end of line before ‘ignored’
+Simple.tab.c:1080:16: error: expected end of line before ‘pop’
+   YY_IGNORE_MAYBE_UNINITIALIZED_END
+                ^
+Simple.tab.c:1090:1: error: unknown type name ‘YYSTYPE’
+ YYSTYPE yylval;
+ ^
+Simple.tab.c: In function ‘yyparse’:
+Simple.tab.c:1119:5: error: unknown type name ‘YYSTYPE’
+     YYSTYPE yyvsa[YYINITDEPTH];
+     ^
+Simple.tab.c:1120:5: error: unknown type name ‘YYSTYPE’
+     YYSTYPE *yyvs;
+     ^
+Simple.tab.c:1121:5: error: unknown type name ‘YYSTYPE’
+     YYSTYPE *yyvsp;
+     ^
+Simple.tab.c:1131:3: error: unknown type name ‘YYSTYPE’
+   YYSTYPE yyval;
+   ^
+Simple.tab.c:414:46: error: ‘YYSTYPE’ undeclared (first use in this function)
+      ((N) * (sizeof (yytype_int16) + sizeof (YYSTYPE)) \
+                                              ^
+Simple.tab.c:1208:44: note: in expansion of macro ‘YYSTACK_BYTES’
+           (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
+                                            ^
+Simple.tab.c:414:46: note: each undeclared identifier is reported only once for each function it appears in
+      ((N) * (sizeof (yytype_int16) + sizeof (YYSTYPE)) \
+                                              ^
+Simple.tab.c:1208:44: note: in expansion of macro ‘YYSTACK_BYTES’
+           (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
+                                            ^
+Simple.y:108:26: error: request for member ‘id’ in something not a structure or union
+   | INTEGER id_seq IDENTIFIER '.' { install( $3 ); }
+                          ^
+Simple.y:112:26: error: request for member ‘id’ in something not a structure or union
+  | id_seq IDENTIFIER ',' { install( $2 ); }
+                          ^
+Simple.y:119:41: error: request for member ‘id’ in something not a structure or union
+  | READ IDENTIFIER { context_check( READ_INT, $2 ); }
+                                         ^
+Simple.y:121:39: error: request for member ‘id’ in something not a structure or union
+  | IDENTIFIER ASSGNOP exp { context_check( STORE, $1 ); }
+                                       ^
+Simple.y:122:17: error: request for member ‘lbls’ in something not a structure or union
+  | IF exp { $1 = (struct lbs *) newlblrec();
+                 ^
+Simple.y:123:16: error: request for member ‘lbls’ in something not a structure or union
+      $1->for_jmp_false = reserve_loc(); }
+                ^
+Simple.y:124:17: error: request for member ‘lbls’ in something not a structure or union
+    THEN commands { $1->for_goto = reserve_loc(); }
+                 ^
+Simple.y:125:29: error: request for member ‘lbls’ in something not a structure or union
+    ELSE { back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+                             ^
+Simple.y:127:29: error: request for member ‘lbls’ in something not a structure or union
+    FI { back_patch( $1->for_goto, GOTO, gen_label() ); }
+                             ^
+Simple.y:128:16: error: request for member ‘lbls’ in something not a structure or union
+  | WHILE { $1 = (struct lbs *) newlblrec();
+                ^
+Simple.y:129:14: error: request for member ‘lbls’ in something not a structure or union
+     $1->for_goto = gen_label(); }
+              ^
+Simple.y:130:17: error: request for member ‘lbls’ in something not a structure or union
+   exp { $1->for_jmp_false = reserve_loc(); }
+                 ^
+Simple.y:133:33: error: request for member ‘lbls’ in something not a structure or union
+    END { gen_code( GOTO, $1->for_goto );
+                                 ^
+Simple.y:134:25: error: request for member ‘lbls’ in something not a structure or union
+   back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+                         ^
+Simple.y:137:34: error: request for member ‘intval’ in something not a structure or union
+ exp : NUMBER { gen_code( LD_INT, $1 ); }
+                                  ^
+Simple.y:138:39: error: request for member ‘id’ in something not a structure or union
+ | IDENTIFIER { context_check( LD_VAR, $1 ); }                                    
