@@ -9,9 +9,19 @@ SYMBOL TABLE RECORD
 -------------------------------------------------------------------------*/
 struct symrec
 {
+<<<<<<< HEAD
 char *name; /* name of symbol */
 int offset; /* data offset */
 struct symrec *next; /* link field */
+=======
+char *name; /* name of symbol
+*/
+int offset; /* data offset
+*/
+struct symrec *next;
+/* link field
+*/
+>>>>>>> 0fcb9c5c8cbfb0c02c2a3fc4e5dcd6da82f9d688
 };
 typedef struct symrec symrec;
 /*-------------------------------------------------------------------------
